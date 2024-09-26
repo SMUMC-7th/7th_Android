@@ -4,6 +4,7 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.wash.smumc_7th_android.databinding.ActivityMainBinding
+import com.wash.smumc_7th_android.home.HomeFragment
 
 class MainActivity : AppCompatActivity() {
     private val binding: ActivityMainBinding by lazy {
@@ -28,7 +29,7 @@ class MainActivity : AppCompatActivity() {
 
 
     private fun setNavigation() = with(binding){
-        botNavmain.setOnItemSelectedListener { item ->
+        botNavMain.setOnItemSelectedListener { item ->
             when(item.itemId){
                R.id.nav_main_home ->{
                    setFragment(HomeFragment())

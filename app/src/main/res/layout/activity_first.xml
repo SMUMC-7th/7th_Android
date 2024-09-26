@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/bg_first"
-    android:paddingHorizontal="16dp"
+    android:paddingHorizontal="@dimen/paddingHorizontalCommon"
+    android:paddingTop="@dimen/paddingTopCommon"
     tools:context=".FirstActivity">
 
 
@@ -13,7 +14,6 @@
         android:id="@+id/iv_first_back"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
         android:src="@drawable/ic_back"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

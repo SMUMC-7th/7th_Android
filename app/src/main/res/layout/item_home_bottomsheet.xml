@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingTop="@dimen/paddingTopCommon">
+
+    <TextView
+        android:id="@+id/tv_itemBotSheet"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/gangwon_edu_hyeonok_t"
+        android:text="따끈따근한 친구들의 일기카드를 확인해보세요!"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_letter"
+        app:layout_constraintStart_toStartOf="@id/tv_itemBotSheet"
+        app:layout_constraintTop_toTopOf="@id/tv_itemBotSheet"
+        app:layout_constraintBottom_toBottomOf="@id/tv_itemBotSheet"
+        android:layout_marginStart="-20dp"
+        android:elevation="-1dp"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

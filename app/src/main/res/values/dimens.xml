@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <dimen name="first_box_topmargin">16dp</dimen>
+    <dimen name="paddingHorizontalCommon">16dp</dimen>
+    <dimen name="paddingTopCommon">24dp</dimen>
 </resources>
