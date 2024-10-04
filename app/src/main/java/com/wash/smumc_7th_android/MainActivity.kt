@@ -21,7 +21,9 @@ class MainActivity : AppCompatActivity() {
 
     private fun initView() = with(binding){
         fun initHomeFragment(){
-            setFragment(HomeFragment())
+            supportFragmentManager.beginTransaction()
+                .replace(R.id.fragmentContainerView_main, HomeFragment())
+                .commit()
         }
 
         initHomeFragment()

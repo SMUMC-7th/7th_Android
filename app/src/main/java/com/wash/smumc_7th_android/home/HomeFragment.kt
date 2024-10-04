@@ -31,7 +31,7 @@ class HomeFragment : Fragment() {
     }
 
     private fun initView() {
-        fun initRecyclerView() = with(binding){
+        fun initBottomSheetRecyclerView() = with(binding){
             rvHomeItemBotSheet.layoutManager = GridLayoutManager(requireContext(), 2)
             rvHomeItemBotSheet.adapter = listAdapter
             listAdapter.submitList(listOf(
@@ -61,7 +61,14 @@ class HomeFragment : Fragment() {
             })
         }
 
-        initRecyclerView()
+        fun initModalBottomSheet(){
+            val botFragment = HomeBottomSheetDialog()
+            botFragment.show(parentFragmentManager, "")
+        }
+
+        initBottomSheetRecyclerView()
+        initPersistentBottomSheet()
+//        initModalBottomSheet()
     }
 
     override fun onDestroyView() {
