@@ -6,13 +6,167 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
+
+    <!-- 프래그먼트가 표시될 부분 -->
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/fragment_container"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/main_bnv" />
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/main_bnv"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:labelVisibilityMode="labeled"
+        app:itemIconTint="@color/navi_item_color"
+        app:itemTextColor="@color/navi_item_color"
+        app:menu="@menu/bottom_navi_menu" />
+
+
+    <ImageView
+        android:id="@+id/bg_paper_iv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/bg_paper"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="-42dp" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:paddingTop="25dp"
+        android:src="@drawable/vector"
+        app:layout_constraintStart_toStartOf="parent" />
+    <!-- padding을 주는 게 맞나? margin 주고 싶어도 줄 수 x 효과가 안 나옴 -->
+
+    <!-- LinearLayout 추가 -->
+    <LinearLayout
+        android:id="@+id/textLayout1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/img1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:gravity="center"> <!-- 수직 중앙 정렬 -->
+
+        <TextView
+            android:id="@+id/howwasyourday"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="오늘 하루는 어땠나요?"
+            android:textSize="20sp"
+            android:gravity="center" />
+
+        <TextView
+            android:id="@+id/selectstamp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="감정우표를 선택해주세요"
+            android:textSize="15sp"
+            android:gravity="center"
+            android:layout_marginTop="7dp" />
+
+        <TextView
+            android:id="@+id/deliver"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="선택한 감정우표를 기반으로 맞춤형 질문이 배달됩니다"
+            android:textSize="10sp"
+            android:gravity="center"
+            android:layout_marginTop="25dp"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/img1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintTop_toBottomOf="@+id/textLayout1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:gravity="center">
+
+        <ImageView
+            android:id="@+id/happybttn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/happy" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="더없이 행복한 하루였어요"
+            android:textSize="15sp"
+            android:gravity="center"
+            android:layout_marginTop="7dp"/>
+
+        <ImageView
+            android:id="@+id/excitebttn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:src="@drawable/excite" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="들뜨고 흥분돼요"
+            android:textSize="15sp"
+            android:gravity="center"
+            android:layout_marginTop="7dp"/>
+
+        <ImageView
+            android:id="@+id/normal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:src="@drawable/normal" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="평범한 하루였어요"
+            android:textSize="15sp"
+            android:gravity="center"
+            android:layout_marginTop="7dp"/>
+
+        <ImageView
+            android:id="@+id/anxious"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:src="@drawable/anxious" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="생각이 많아지고 불안해요"
+            android:textSize="15sp"
+            android:gravity="center"
+            android:layout_marginTop="7dp"/>
+
+        <ImageView
+            android:id="@+id/angry"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:src="@drawable/angry" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="부글부글 화가 나요"
+            android:textSize="15sp"
+            android:gravity="center"
+            android:layout_marginTop="7dp"/>
+
+    </LinearLayout>
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
