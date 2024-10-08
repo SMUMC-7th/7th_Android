@@ -24,6 +24,12 @@
         <activity
             android:name=".MainActivity"
             android:exported="true" />
+        <activity android:name=".Page1Activity" />
+        <activity android:name=".Page2Activity" />
+        <activity android:name=".Page3Activity" />
+        <activity android:name=".Page4Activity" />
+        <activity android:name=".Page5Activity" />
+        <activity android:name=".PreviousActivity" />
     </application>
 
 </manifest>
