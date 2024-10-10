@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/cl_list_title_parent">
+
+    <TextView
+        android:id="@+id/song_list_order_01_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="10dp"
+        android:text="01"
+        android:textColor="@color/black"
+        android:textSize="10sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/song_list_title_01_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:background="@drawable/textview_background_select_color_radius"
+        android:paddingStart="5dp"
+        android:paddingEnd="5dp"
+        android:text="TITLE"
+        android:textColor="@color/white"
+        android:textSize="8sp"
+        app:layout_constraintBottom_toBottomOf="@+id/song_list_order_01_tv"
+        app:layout_constraintStart_toEndOf="@+id/song_list_order_01_tv"
+        app:layout_constraintTop_toTopOf="@+id/song_list_order_01_tv" />
+
+    <TextView
+        android:id="@+id/song_music_title_01_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="라일락"
+        android:textColor="@color/black"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@+id/song_list_title_01_tv"
+        app:layout_constraintStart_toEndOf="@+id/song_list_title_01_tv"
+        app:layout_constraintTop_toTopOf="@+id/song_list_title_01_tv" />
+
+
+    <TextView
+        android:id="@+id/song_singer_name_01_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="10dp"
+        android:text="가수"
+        android:textSize="10sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/song_list_title_01_tv"
+        app:layout_constraintTop_toBottomOf="@+id/song_list_title_01_tv" />
+
+    <ImageView
+        android:id="@+id/song_play_01_iv"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:src="@drawable/btn_miniplayer_play"
+        app:layout_constraintBottom_toBottomOf="@+id/song_more_01_iv"
+        app:layout_constraintEnd_toStartOf="@+id/song_more_01_iv"
+        app:layout_constraintTop_toTopOf="@+id/song_more_01_iv" />
+
+    <ImageView
+        android:id="@+id/song_more_01_iv"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_marginEnd="15dp"
+        android:src="@drawable/btn_player_more"
+        app:layout_constraintBottom_toBottomOf="@+id/song_singer_name_01_tv"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/song_music_title_01_tv" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

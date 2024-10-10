@@ -8,17 +8,19 @@
     <fragment
         android:id="@+id/home"
         android:name="com.wash.smumc_7th_android.home.HomeFragment"
-        tools:layout="@layout/fragment_home"/>
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_home_to_album"
+            app:destination="@id/album"/>
+    </fragment>
 
     <fragment
         android:id="@+id/album"
-        android:name="com.wash.smumc_7th_android.home.HomeFragment"
-        tools:layout="@layout/fragment_album"/>
-
-    <fragment
-        android:id="@+id/song"
-        android:name="com.wash.smumc_7th_android.home.HomeFragment"
-        tools:layout="@layout/fragment_song"/>
-
+        android:name="com.wash.smumc_7th_android.album.AlbumFragment"
+        tools:layout="@layout/fragment_album" >
+        <action
+            android:id="@+id/action_album_to_home"
+            app:destination="@id/home"/>
+    </fragment>
 
 </navigation>

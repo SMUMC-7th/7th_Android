@@ -1,19 +1,20 @@
 package com.wash.smumc_7th_android
 
 import android.view.View
-import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.fragment.app.FragmentActivity
+import androidx.navigation.NavOptions
+import com.google.android.material.bottomnavigation.BottomNavigationView
 
 fun FragmentActivity.visible() {
     (this as? MainActivity)?.let {
-        val layout = findViewById<ConstraintLayout>(R.id.botNav_main)
+        val layout = findViewById<BottomNavigationView>(R.id.botNav_main)
         layout.visibility = View.VISIBLE
     }
 }
 
 fun FragmentActivity.invisible() {
     (this as? MainActivity)?.let {
-        val layout = findViewById<ConstraintLayout>(R.id.botNav_main)
+        val layout = findViewById<BottomNavigationView>(R.id.botNav_main)
         layout.visibility = View.GONE
     }
 }
