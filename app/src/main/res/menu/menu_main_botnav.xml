@@ -11,11 +11,6 @@
         android:title="둘러보기"/>
 
     <item
-        android:id="@+id/menu_main_audio"
-        android:icon="@drawable/main_btm_my_selector"
-        android:title="오디오"/>
-
-    <item
         android:id="@+id/menu_main_search"
         android:icon="@drawable/main_btm_search_selector"
         android:title="검색"/>
