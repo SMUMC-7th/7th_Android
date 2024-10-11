@@ -7,6 +7,9 @@ android {
     namespace = "com.jihyun.floclonecoding"
     compileSdk = 34
 
+    viewBinding {
+        enable = true
+    }
     defaultConfig {
         applicationId = "com.jihyun.floclonecoding"
         minSdk = 24
