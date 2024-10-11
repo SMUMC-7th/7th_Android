@@ -37,6 +37,13 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent">
 
+                <TextView
+                    android:id="@+id/song_mix_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="내 취향 MIX"
+                    android:textColor="@color/black" />
 
                 <ImageView
                     android:id="@+id/song_mixoff_tg"
