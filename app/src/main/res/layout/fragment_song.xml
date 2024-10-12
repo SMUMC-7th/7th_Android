@@ -58,7 +58,7 @@
                     android:layout_height="25dp"
                     android:layout_gravity="center"
                     android:src="@drawable/btn_toggle_on"
-                    android:visibility="gone" />
+                    android:visibility="invisible" />
 
 
             </LinearLayout>

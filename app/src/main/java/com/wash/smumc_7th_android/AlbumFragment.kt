@@ -34,25 +34,13 @@ class AlbumFragment : Fragment() {
             tab.text = information[position]
         }.attach()
 
-        binding.songMixoffTg.setOnClickListener {
-            toggleMixMode(true)
-        }
 
-        binding.songMixonTg.setOnClickListener {
-            toggleMixMode(false)
-        }
+
+
         return binding.root
 
     }
 
-    fun toggleMixMode(isMixMode : Boolean) {
-        if (isMixMode) {
-            binding.songMixoffTg.visibility = View.GONE
-            binding.songMixonTg.visibility = View.VISIBLE
-        } else {
-            binding.songMixoffTg.visibility = View.VISIBLE
-            binding.songMixonTg.visibility = View.GONE
-        }
-    }
+
 
 }
