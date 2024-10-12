@@ -26,13 +26,12 @@ class HomeFragment : Fragment() {
                 }
                 findNavController().navigate(
                     resId = R.id.action_home_to_album,
-                    args = bundle)
+                    args = bundle
+                )
             })
     }
 
-    private val homeBannerViewPagerAdapter: HomeBannerViewPagerAdapter by lazy {
-        HomeBannerViewPagerAdapter(requireActivity())
-    }
+    private lateinit var homeBannerViewPagerAdapter: HomeBannerViewPagerAdapter
 
 
     val todayAlbumList = listOf(
@@ -49,6 +48,8 @@ class HomeFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
+        homeBannerViewPagerAdapter = HomeBannerViewPagerAdapter(requireActivity())
+
         return binding.root
     }
 
@@ -66,9 +67,10 @@ class HomeFragment : Fragment() {
             releasedMusicListAdapter.submitList(todayAlbumList)
         }
 
-        fun initViewPager()  {
+        fun initViewPager() {
             homeBannerVp.adapter = homeBannerViewPagerAdapter
         }
+
 
         initRecyclerView()
         initViewPager()
