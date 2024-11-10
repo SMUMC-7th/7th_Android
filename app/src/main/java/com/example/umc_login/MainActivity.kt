@@ -6,6 +6,7 @@ import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
 import com.example.umc_login.databinding.ActivityMainBinding
+import com.example.umc_login.remote.LoginRequest
 import kotlinx.coroutines.launch
 
 class MainActivity : AppCompatActivity() {
@@ -27,16 +28,18 @@ class MainActivity : AppCompatActivity() {
             lifecycleScope.launch {
                 try {
                     val loginresult = RetrofitClient.datasource.postLogin(
-                        email = etId.text.toString(),
-                        password = etPw.text.toString()
+                        LoginRequest(
+                            email = etId.text.toString(),
+                            password = etPw.text.toString()
+                        )
                     )
 
                     loginresult.result?.accessToken?.let {
-                        val testResult = RetrofitClient.datasource.getJwtTest(token = it)
+                        val testResult = RetrofitClient.datasource.getJwtTest(token = "Bearer $it")
 
                         Log.d("result", "$loginresult, $testResult")
                     }
-                } catch (e: Exception){
+                } catch (e: Exception) {
                     Log.e("error", e.toString())
                 }
             }

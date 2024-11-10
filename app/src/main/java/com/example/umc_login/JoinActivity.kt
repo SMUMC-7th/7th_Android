@@ -5,6 +5,7 @@ import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
 import com.example.umc_login.databinding.ActivityJoinBinding
+import com.example.umc_login.remote.JoinRequest
 import kotlinx.coroutines.launch
 
 class JoinActivity : AppCompatActivity() {
@@ -24,11 +25,14 @@ class JoinActivity : AppCompatActivity() {
             lifecycleScope.launch {
                 try {
                     val joinResult = RetrofitClient.datasource.postJoin(
-                        name = etName.text.toString(),
-                        email = etId.text.toString(),
-                        password = etPw.text.toString()
+                        JoinRequest(
+                            name = etName.text.toString(),
+                            email = etId.text.toString(),
+                            password = etPw.text.toString()
+                        )
                     )
-                    Log.d("result", "$joinResult")
+                        Log.d("result", "$joinResult")
+                        finish()
                 } catch (e: Exception) {
                     Log.e("error", e.toString())
                 }

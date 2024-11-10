@@ -55,6 +55,8 @@ dependencies {
     implementation("com.squareup.retrofit2:converter-gson:2.9.0")
     implementation("com.jakewharton.retrofit:retrofit2-kotlin-coroutines-adapter:0.9.2")
 
+    implementation("com.squareup.okhttp3:logging-interceptor:4.8.0")
+
     // coroutine 관련 의존성
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.0")
     implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.5.0")

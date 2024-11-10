@@ -7,22 +7,29 @@ import retrofit2.http.Body
 import retrofit2.http.GET
 import retrofit2.http.Header
 import retrofit2.http.POST
-import retrofit2.http.Query
 
 interface RemoteDatasource {
     @POST("login")
     suspend fun postLogin(
-        @Query("email") email: String,
-        @Query("password") password: String
+        @Body loginRequest: LoginRequest  // 로그인 요청 데이터를 @Body로 전달
     ): LoginResponse
 
     @POST("join")
     suspend fun postJoin(
-        @Query("name") name: String,
-        @Query("email") email: String,
-        @Query("password") password: String
+        @Body joinRequest: JoinRequest  // 회원가입 요청 데이터를 @Body로 전달
     ): JoinResponse
 
     @GET("test")
     suspend fun getJwtTest(@Header("Authorization") token: String): TestResponse
 }
+
+data class LoginRequest(
+    val email: String,
+    val password: String
+)
+
+data class JoinRequest(
+    val name: String,
+    val email: String,
+    val password: String
+)

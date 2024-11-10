@@ -2,14 +2,21 @@ package com.example.umc_login
 
 import com.example.umc_login.remote.RemoteDatasource
 import okhttp3.OkHttpClient
+import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
 object RetrofitClient {
-    const val BASE_URL = "https://3.35.121.185/"
+    const val BASE_URL = "http://3.35.121.185/"
+
+
+    private val loggingInterceptor = HttpLoggingInterceptor().apply {
+        level = HttpLoggingInterceptor.Level.BODY
+    }
 
     private val okHttpClient by lazy {
         OkHttpClient.Builder()
+            .addInterceptor(loggingInterceptor)
             .build()
     }
 
