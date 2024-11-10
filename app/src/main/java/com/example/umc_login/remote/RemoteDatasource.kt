@@ -7,6 +7,7 @@ import retrofit2.http.Body
 import retrofit2.http.GET
 import retrofit2.http.Header
 import retrofit2.http.POST
+import retrofit2.http.Query
 
 interface RemoteDatasource {
     @POST("login")
@@ -24,12 +25,12 @@ interface RemoteDatasource {
 }
 
 data class LoginRequest(
-    val email: String,
-    val password: String
+    @Query("email") val email: String,
+    @Query("password") val password: String
 )
 
 data class JoinRequest(
-    val name: String,
-    val email: String,
-    val password: String
+    @Query("name") val name: String,
+    @Query("email") val email: String,
+    @Query("password") val password: String
 )
