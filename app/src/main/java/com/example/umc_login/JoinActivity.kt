@@ -24,7 +24,7 @@ class JoinActivity : AppCompatActivity() {
         btnJoin.setOnClickListener {
             lifecycleScope.launch {
                 try {
-                    val joinResult = RetrofitClient.datasource.postJoin(
+                    var joinResult = RetrofitClient.datasource.postJoin(
                         JoinRequest(
                             name = etName.text.toString(),
                             email = etId.text.toString(),
